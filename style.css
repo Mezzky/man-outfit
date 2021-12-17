@@ -1,0 +1,656 @@
+/* Font Family */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* CSS Reset */
+html,
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+.pembatas{
+    overflow: hidden;
+}
+
+/* Menu Bars */
+.menu-toggle{
+    position: relative;
+    margin-right: 40px;
+    height: 20px;
+    /* display: flex; */
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-toggle input{
+    position: absolute;
+    top: -6px;
+    left: -9px;
+    width: 40px;
+    height: 28px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.menu-toggle span{
+    display: block;
+    width: 30px;
+    height: 4px;
+    background-color: #315353;
+    border-radius: 3px;
+    transition: all .5s;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2){
+    transform-origin: 0 0;
+}
+
+.menu-toggle input:checked ~ span:nth-child(4){
+    transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2){
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3){
+    transform: scale(0);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4){
+    transform: rotate(-45deg) translate(-2px, 1px);
+}
+
+/* Header Style */
+header{
+    position: fixed;
+    z-index: 999;
+    background-color: #fff;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo{
+    text-decoration: none;
+}
+
+header h1{
+    color: #315353;
+    font-size: 25px;
+    margin-left: 100px;
+}
+
+header ul{
+    display: flex;
+    margin-right: 0;
+}
+
+header ul li{
+    list-style: none;
+    margin-right: 50px;
+}
+
+header ul li a{
+    text-decoration: none;
+    color: #315353;
+    transition: 100ms;
+}
+header ul li a:hover{
+    color: #DCF3E6;
+}
+
+/* Home Style */
+.home{
+    position: relative;
+    width: 100%;
+    padding-top: 180px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom right,#DCF3E6, #A9CFCF);
+}
+
+.scroll{
+    position: absolute;
+    left: -70px;
+    bottom: 210px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    transform: rotate(90deg);
+}
+
+.scroll .garis{
+    margin-left: 10px;
+    border-bottom: 2px solid #000;
+    width: 60%;
+    animation: scroll 5s linear infinite;
+}
+
+.home .text-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home .text{
+    position: relative;
+}
+
+.home .text h2{
+    font-size: 15px;
+    color: #1b2b2b;
+}
+
+.home .text p{
+    font-size: 30px;
+    font-weight: bold;
+    color: #000;
+    text-shadow: 5px 5px 10px rgba(0,0,0,.5);
+}
+
+.home .text .button{
+    text-decoration: none;
+    color: #fff;
+    background-color: #000;
+    padding: 10px 35px;
+    transition: 100ms;
+}
+.home .text .button:hover{
+    color: rgb(228, 226, 226);
+    background-color: rgb(43, 43, 43);
+}
+
+.home .gambar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home .gambar img{
+    height: 435px;
+    width: 337px;
+}
+
+/* Product Style */
+.product{
+    /* margin: auto; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+}
+
+.product .pilihan{
+    /* width: 90%; */
+    height: 250px;
+    display: grid;
+    grid-template-columns: repeat(3,400px);
+    gap: 15px;
+    /* background-color: beige; */
+}
+
+.product .pilihan .baju{
+    background-image: url(img/baju.png);
+    background-size: 400px;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s linear;
+}
+.product .pilihan .baju:hover{
+    background-size: 600px;
+}
+
+.product .pilihan .kaca-mata{
+    background-image: url(img/kaca-mata.png);
+    background-size: 400px;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s linear;
+}
+.product .pilihan .kaca-mata:hover{
+    background-size: 600px;
+    background-position: -90px;
+}
+
+.product .pilihan .jam{
+    background-image: url(img/jam.png);
+    background-size: 400px;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s linear;
+}
+.product .pilihan .jam:hover{
+    background-size: 600px;
+    background-position: -100px;
+}
+
+.product .pilihan .link{
+    font-size: 30px;
+    text-decoration: none;
+    color: #5A5A5A;
+    transition: 100ms;
+}
+.product .pilihan .link:hover{
+    color: #9fb1b1;
+}
+
+/* Gallery Style */
+.gallery{
+    /* margin: auto; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+}
+
+.gallery .container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+}
+
+.gallery .container img{
+    width: 280px;
+    height: 400px;
+}
+
+/* Preview Style */
+.preview{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mySwiper{
+    display: grid;
+    gap: 50px;
+    grid-template-columns: repeat(3,1fr);
+}
+
+.mySwiper .slide{
+    width: 400px;
+    height: 150px;
+    background-color: #C4C4C4;
+}
+
+/* Contact */
+.contact{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+}
+
+.contact .container{
+    width: 100%;
+    border-top: 5px solid #909494;
+    padding: 20px 0;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+    background-color: #A9CFCF;
+}
+
+.contact .container .box{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* background-color: #fff; */
+    padding: 20px;
+    padding-left: 70px;
+    /* align-items: center; */
+}
+
+.contact .container .box a, .credit span a{
+    text-decoration: none;
+    color:#315353;
+    transition: 100ms;
+}
+.contact .container .box a:hover{
+    color: #c9e4e4;
+}
+.contact .credit span a:hover{
+    color: #c9e4e4;
+}
+
+.contact .credit{
+    background-color: #A9CFCF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 20px;
+    padding: 10px;
+    color: #1b2b2b;
+}
+
+.contact .credit span{
+    display: block;
+    text-align: center;
+    width: 60%;
+    border-top: 2px solid #909494;
+    padding: 10px;
+}
+
+
+/* RESPONSIVE */
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+    /* Header Responsive */
+    header h1{
+        margin-left: 30px;
+    }
+
+    header ul{
+        margin-right: 20px;
+    }
+
+    /* Home Responsive */
+    .home{
+        padding-top: 50px;
+        grid-template-columns: 1fr 0;
+    }
+
+    .home .text-container{
+        max-width: 400px;
+        margin: auto;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .home .gambar {
+        transform: scale(0);
+    }
+
+    .home .scroll{
+        bottom: 185px;
+        left: -35px;
+    }
+
+    /* Product Responsive */
+    .product .pilihan{
+        grid-template-columns: 600px;
+        height: 1000px;
+    }
+
+    .product .pilihan .baju{
+        background-image: url(img/baju.png);
+        background-size: 600px;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: .5s linear;
+    }
+    .product .pilihan .baju:hover{
+        background-size: 800px;
+    }
+    
+    .product .pilihan .kaca-mata{
+        background-image: url(img/kaca-mata.png);
+        background-size: 600px;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: .5s linear;
+    }
+    .product .pilihan .kaca-mata:hover{
+        background-size: 800px;
+    }
+    
+    .product .pilihan .jam{
+        background-image: url(img/jam.png);
+        background-size: 600px;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: .5s linear;
+    }
+    .product .pilihan .jam:hover{
+        background-size: 800px;
+    }
+
+    /* Gallery Responsive */
+    .gallery .container{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    /* Contact Responsive */
+    .contact .container{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+/* Handphone */
+@media screen and (max-width: 576px) {
+    /* Header Responsive */
+    .menu-toggle{
+        display: flex;
+    }
+
+    header{
+        z-index: 20;
+    }
+
+    header ul{
+        position: absolute;
+        right: -19px;
+        top: 55px;
+        width: 60%;
+        height: 100vh;
+        flex-direction: column;
+        align-items: center;
+        z-index: -1;
+        transform: translateX(100%);
+        background-color: #fff;
+        transition: .5s;
+    }
+
+    header ul li{
+        margin-top: 70px;
+    }
+
+    header ul.slide{
+        transform: translateX(0);
+        transition: .5s;
+    }
+
+    /* Home Responsive */
+    .home .scroll{
+        left: -120px;
+        transform: scale(.8) rotate(90deg);
+    }
+
+    .home .text-container .text{
+        font-size: 15px;
+    }
+
+    .home .text-container .text p{
+        font-size: 25px;
+    }
+
+    .home .text-container .text h2{
+        font-size: 10px;
+    }
+
+    /* Product Responsive */
+    .product .pilihan{
+        grid-template-columns: 400px;
+        height: 1000px;
+    }
+
+    .product .pilihan .baju{
+        background-image: url(img/baju.png);
+        background-size: 500px;
+        background-repeat: no-repeat;
+        display: flex;
+        background-color: #A9CFCF;
+        justify-content: center;
+        align-items: center;
+        transition: .5s linear;
+    }
+    .product .pilihan .baju:hover{
+        background-size: 600px;
+    }
+    
+    .product .pilihan .kaca-mata{
+        background-image: url(img/kaca-mata.png);
+        background-size: 500px;
+        background-repeat: no-repeat;
+        display: flex;
+        background-color: #A9CFCF;
+        justify-content: center;
+        align-items: center;
+        transition: .5s linear;
+    }
+    .product .pilihan .kaca-mata:hover{
+        background-size: 600px;
+    }
+    
+    .product .pilihan .jam{
+        background-image: url(img/jam.png);
+        background-size: 500px;
+        background-repeat: no-repeat;
+        display: flex;
+        background-color: #A9CFCF;
+        justify-content: center;
+        align-items: center;
+        transition: .5s linear;
+    }
+    .product .pilihan .jam:hover{
+        background-size: 600px;
+    }
+
+    /* Gallery Responsive */
+    .gallery .container{
+        grid-template-columns: 1fr;
+    }
+
+    /* Contact Responsive */
+    .contact .container{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .contact .container .box{
+        transform: scale(.8) ;
+        padding-left: 30px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    /* Home Responsive */
+    .scroll{
+        top: 310px;
+        transform: scale(.6) rotate(90deg);
+    }
+
+    .home .text-container .text{
+        font-size: 10px;
+    }
+
+    .home .text-container .text p{
+        font-size: 20px;
+    }
+
+    /* Product Responsive */
+    .product .pilihan{
+        grid-template-columns: 300px;
+        height: 630px;
+    }
+
+    .product .pilihan .baju{
+        background-image: url(img/baju.png);
+        background-size: 400px;
+        height: 200px;
+        background-repeat: no-repeat;
+        display: flex;
+        background-color: #A9CFCF;
+        justify-content: center;
+        align-items: center;
+        transition: .5s linear;
+    }
+    .product .pilihan .baju:hover{
+        background-size: 600px;
+    }
+    
+    .product .pilihan .kaca-mata{
+        background-image: url(img/kaca-mata.png);
+        background-size: 400px;
+        height: 200px;
+        background-repeat: no-repeat;
+        display: flex;
+        background-color: #A9CFCF;
+        justify-content: center;
+        align-items: center;
+        transition: .5s linear;
+    }
+    .product .pilihan .kaca-mata:hover{
+        background-size: 600px;
+    }
+    
+    .product .pilihan .jam{
+        background-image: url(img/jam.png);
+        background-size: 400px;
+        height: 200px;
+        background-repeat: no-repeat;
+        display: flex;
+        background-color: #A9CFCF;
+        justify-content: center;
+        align-items: center;
+        transition: .5s linear;
+    }
+    .product .pilihan .jam:hover{
+        background-size: 600px;
+    }
+
+    /* Contact Responsive */
+    .contact .container{
+        grid-template-columns: 200px;
+    }
+
+    .contact .container .box{
+        transform: scale(.8) ;
+        padding-left: 30px;
+    }
+}
+
+
+
+/* ANIMASIIIII */
+@keyframes scroll{
+    0%{
+        width: 0;
+    }
+    50%{
+        width: 60%;
+    }
+    100%{
+        width: 0;
+    }
+}
